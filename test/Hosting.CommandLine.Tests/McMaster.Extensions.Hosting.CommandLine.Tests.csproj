@@ -37,7 +37,14 @@
 
   <ItemGroup>
     <None Update="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="app.config" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- Copy app.config for .NET Framework test runner -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <None Update="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>$(AssemblyName).dll.config</TargetPath>
+    </None>
   </ItemGroup>
 
 </Project>
