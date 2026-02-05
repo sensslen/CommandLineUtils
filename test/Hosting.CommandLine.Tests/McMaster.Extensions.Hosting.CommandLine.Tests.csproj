@@ -39,4 +39,9 @@
     <None Update="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <!-- Copy app.config with correct name for .NET Framework test runner -->
+  <Target Name="CopyAppConfigForNet472" AfterTargets="Build" Condition="'$(TargetFramework)' == 'net472'">
+    <Copy SourceFiles="app.config" DestinationFiles="$(OutputPath)$(AssemblyName).dll.config" SkipUnchangedFiles="true" />
+  </Target>
+
 </Project>
