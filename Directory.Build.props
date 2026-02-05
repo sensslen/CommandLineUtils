@@ -31,6 +31,8 @@
     <WarningsNotAsErrors>$(WarningsNotAsErrors);1591</WarningsNotAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <Nullable>enable</Nullable>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)src\StrongName.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
 
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateFullPaths Condition="'$(TERM_PROGRAM)' == 'vscode'">true</GenerateFullPaths>
